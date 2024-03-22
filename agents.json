@@ -1,0 +1,58 @@
+{
+    "agents": [
+        {
+            "name": "Alice",
+            "gender": "Female",
+            "age": 30,
+            "occupation": "Software Engineer",
+            "education": "Master's in Computer Science",
+            "nationality": "Canadian",
+            "worldview": "Progressive"
+        },
+        {
+            "name": "Bob",
+            "gender": "Male",
+            "age": 45,
+            "occupation": "Farmer",
+            "education": "High School",
+            "nationality": "Indian",
+            "worldview": "Traditional"
+        },
+        {
+            "name": "Carlos",
+            "gender": "Male",
+            "age": 52,
+            "occupation": "Politician",
+            "education": "Law Degree",
+            "nationality": "Brazilian",
+            "worldview": "Conservative"
+        },
+        {
+            "name": "Diana",
+            "gender": "Female",
+            "age": 26,
+            "occupation": "Journalist",
+            "education": "Bachelor's in Journalism",
+            "nationality": "Kenyan",
+            "worldview": "Liberal"
+        },
+        {
+            "name": "Erik",
+            "gender": "Male",
+            "age": 39,
+            "occupation": "Teacher",
+            "education": "Master's in Education",
+            "nationality": "Swedish",
+            "worldview": "Socialist"
+        },
+        {
+            "name": "Fiona",
+            "gender": "Female",
+            "age": 34,
+            "occupation": "Entrepreneur",
+            "education": "MBA",
+            "nationality": "American",
+            "worldview": "Libertarian"
+        }
+    ]
+}
