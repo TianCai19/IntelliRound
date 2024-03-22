@@ -49,6 +49,7 @@ with open('agents.json', 'r') as file:
 # 定义讨论话题
 topic = "What is the impact of technology on society?"
 topic=" 讲个自己领域的笑话"
+topic="中国发展对世界的影响"
 announcemnet = f"hello ,every one ,today table event's topic is {topic} answer brefly within 3 sentence.Try using Chinese."
 
 # 开始讨论
