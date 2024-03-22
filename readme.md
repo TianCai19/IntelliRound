@@ -66,6 +66,3 @@ with msghub(participants=agents, announcement=Msg("Host", announcement)) as hub:
 ## 许可证信息
 本项目使用[MIT许可证](LICENSE)。
 
----
-
-请根据你的项目具体情况调整上述内容。如果你有任何特定的要求或需要添加其他信息，请告诉我，我会相应地更新README文件。
