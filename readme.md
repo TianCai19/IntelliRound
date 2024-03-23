@@ -4,6 +4,9 @@
 ## 项目介绍
 本项目旨在通过AI代理模拟圆桌会议的讨论环境。代理们将基于各自的个性化背景（如年龄、职业、国籍等）和世界观，就特定话题进行讨论。项目使用`agentscope`框架来创建和管理代理，并利用预设的模型配置来生成讨论内容。
 
+## 魔搭平台ModelScope
+项目已经部署到[魔搭平台ModelScope](https://modelscope.cn/studios/CodyWhy/IntelliRound/summary)，可以从这个链接进行体验。
+
 ## 项目效果
 ```bash
 Alice: 大家好，我是一名来自加拿大的30岁软件工程师，持有进步的视角。在中国，我会说一些中文，虽然可能不太流利，但我会尽力沟通交流。很高兴能在这里与大家分享观点和讨论各种话题。谢谢！
@@ -86,9 +89,11 @@ with msghub(participants=agents, announcement=Msg("Host", announcement)) as hub:
         x = sequentialpipeline(agents, x)
 ```
 ## TODO
-- [ ] add requirement
-- [*] 使用 gradio 部署
-- [ ] 部署到魔搭平台
+- [x] add requirement
+- [x] 使用 gradio 部署
+- [x] 部署到魔搭平台
+- [] 使用 agent 创建新的 圆桌讨论人员
+
 ## 贡献指南
 如果你对项目感兴趣并希望做出贡献，请fork本项目，提交issue讨论或直接提交pull request。
 
