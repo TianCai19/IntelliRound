@@ -17,7 +17,7 @@ class DiscussionAgent(DialogAgent):
         
         # 构造函数需要的参数
         sys_prompt = f"You are a {self.age}-year-old {self.occupation} from {self.nationality} with a {self.worldview} perspective.you are join a table disscussion ,talk with others about the topic.just be yourslf ,say waht u want .In China ,you should say Chinese"
-        model_config_name = "qwent"  # 假设我们使用名为'qwen'的模型配置
+        model_config_name = "qwen"  # 假设我们使用名为'qwen'的模型配置
 
         # 调用父类的初始化方法
         super().__init__(name=name, sys_prompt=sys_prompt, model_config_name=model_config_name, **kwargs)
@@ -50,7 +50,8 @@ with open('agents.json', 'r') as file:
 topic = "What is the impact of technology on society?"
 topic=" 讲个自己领域的笑话"
 topic="中国发展对世界的影响"
-announcemnet = f"hello ,every one ,today table event's topic is {topic} answer brefly within 3 sentence.Try using Chinese."
+topic="为啥下一代的教育很重要"
+announcemnet = f"hello ,every one ,today table event's topic is {topic} ，answer brefly within 3 sentence.Try using Chinese."
 
 # 开始讨论
 # for agent in agents:
