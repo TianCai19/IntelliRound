@@ -48,9 +48,9 @@ with open('agents.json', 'r') as file:
 
 # 定义讨论话题
 topic = "What is the impact of technology on society?"
-topic=" 讲个自己领域的笑话"
-topic="中国发展对世界的影响"
-topic="为啥下一代的教育很重要"
+# topic=" 讲个自己领域的笑话"
+# topic="中国发展对世界的影响"
+# topic="为啥下一代的教育很重要"
 announcemnet = f"hello ,every one ,today table event's topic is {topic} ，answer brefly within 3 sentence.Try using Chinese."
 
 # 开始讨论
@@ -64,6 +64,7 @@ x=Msg("Host", "介绍你自己用汉语")
 for agent in agents:
     # x = agent(x)
     agent.reply(x)
+    
 
 with msghub(
     participants=agents,announcement=Msg("Host", announcemnet)
@@ -72,7 +73,7 @@ with msghub(
     x=None
 
     hub.broadcast(Msg("Host", topic))
-    for _ in range(3):
+    for _ in range(0):
         x = sequentialpipeline(agents, x)
         
         # hub.broadcast(Msg("Host", "感谢大家这一轮的回答，接下来开始下一轮的讨论"))

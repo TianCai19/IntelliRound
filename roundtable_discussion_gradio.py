@@ -26,7 +26,14 @@ class DiscussionAgent(DialogAgent):
 
 
     
-def start_roundtable_discussion(topic="What is the impact of technology on society?", rounds=3):
+def start_roundtable_discussion(topic="What is the impact of technology on society?",history=None):
+    print("topic:",topic,".")
+    #去除 topic 的空格
+    topic=topic.strip()
+    if topic=="" or topic==None:
+        topic="What is the impact of technology on society?"
+    print("topic:",topic,".")
+    rounds = 3
     # 初始化AgentScope
     agentscope.init(model_configs="./model_configs.json")
 
@@ -38,6 +45,14 @@ def start_roundtable_discussion(topic="What is the impact of technology on socie
     for agent_data in agents_data[:3]:
         agents.append(DiscussionAgent(**agent_data))
 
+    # 自我介绍
+    x=Msg("Host", "介绍你自己用汉语")
+    for agent in agents:
+        r=agent.reply(x)
+        history.append([r.to_str(),None])
+        yield
+    
+    #return history
     # 定义讨论话题
     announcemnet = f"Hello everyone, today's table event's topic is {topic}. Please answer briefly within 3 sentences."
 
@@ -47,7 +62,28 @@ def start_roundtable_discussion(topic="What is the impact of technology on socie
         # Agents can now broadcast and receive messages within this block
         x = None
 
-        hub.broadcast(Msg("Host", topic))
+        #hub.broadcast(Msg("Host", topic))
         for _ in range(rounds):
             for agent in agents:
                 x = agent(x)
+                history.append([x.to_str(),None])
+                yield
+    return history
+
+import gradio as gr
+import time
+
+def alternatingly_agree(message, history):
+    history.append([message, None])
+    time.sleep(1)
+    history.append(["客服回答：好",None])
+    yield 
+    time.sleep(1)
+    history.append(["客户回答：好",None])
+    yield
+    time.sleep(1)
+    history.append(["客户回答：好",None])
+    yield "end"
+    
+
+gr.ChatInterface(start_roundtable_discussion).launch()
