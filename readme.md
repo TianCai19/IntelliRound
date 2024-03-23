@@ -85,7 +85,10 @@ with msghub(participants=agents, announcement=Msg("Host", announcement)) as hub:
     for _ in range(3):
         x = sequentialpipeline(agents, x)
 ```
-
+## TODO
+- [ ] add requirement
+- [*] 使用 gradio 部署
+- [ ] 部署到魔搭平台
 ## 贡献指南
 如果你对项目感兴趣并希望做出贡献，请fork本项目，提交issue讨论或直接提交pull request。
 
